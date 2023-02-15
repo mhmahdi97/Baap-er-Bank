@@ -16,7 +16,7 @@ document.getElementById("btn-submit").addEventListener("click", function () {
     password === ""
   ) {
     alert(
-      "Please provide the valid Email Address and Password provided by 'Mahmud Hasan Mahdi'"
+      "Please enter the valid Email Address and Password provided by 'Mahmud Hasan Mahdi'"
     );
   }
   //   else if (password === null) {
