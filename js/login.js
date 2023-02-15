@@ -7,9 +7,22 @@ document.getElementById("btn-submit").addEventListener("click", function () {
   //   step-3: get password
   const passwordField = document.getElementById("user-password");
   const password = passwordField.value;
-  if (email === "baap@bank.com" && password === "baapErBank") {
+  if (email === "baap@bank.com" && password === "baaperbank") {
     window.location.href = "bank.html";
-  } else {
+  } else if (
+    email === null ||
+    email === "" ||
+    password === null ||
+    password === ""
+  ) {
+    alert(
+      "Please provide the valid Email Address and Password provided by 'Mahmud Hasan Mahdi'"
+    );
+  }
+  //   else if (password === null) {
+  //     alert("Please provid the Password collected from 'Mahmud Hasan Mahdi'");
+  //   }
+  else {
     alert("Incorrect Email and Password");
   }
 });
