@@ -12,6 +12,14 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   // const previousDipositTotal = parseFloat(previousDipositTotalString);
   const previousDipositTotal = getTextElementValueById("diposit-total");
   const previousBalanceTotal = getTextElementValueById("balance-total");
+  if (isNaN(newDipositAmount)) {
+    alert("Please provide a valid number, not text!!!");
+    return;
+  }
+  if (newDipositAmount < 0) {
+    alert("Please provide a positive number!!!");
+    return;
+  }
 
   // Add numbers to set the total deposits
   const currentDipositTotal = previousDipositTotal + newDipositAmount;
@@ -34,9 +42,15 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   // dipositField.value = "";
 });
 
-// // spelling checking purpose
-// currentDepositTotal;
-// currentDipositTotal;
+document
+  .getElementById("diposit-field")
+  .addEventListener("keyup", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
 
-// previousBalanceTotal;
-// previousBalanceTotal;
+      document.getElementById("btn-deposit").click();
+    }
+  });
